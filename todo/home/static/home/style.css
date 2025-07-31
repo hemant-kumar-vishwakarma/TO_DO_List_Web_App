@@ -1,0 +1,179 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    /* height: 100vh; */
+    background-color: blueviolet;
+}
+.container{
+    height: 100%;
+    width: 100%;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    
+}
+.box{
+    background-color: rgb(213, 182, 244);
+    border : solid 2px black;
+    height: fit-content;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    margin-top: 3rem;
+    
+    
+}
+.form1{
+    background-color: aliceblue;
+    width: 75%;
+    height: 50px ;
+    border: solid 2px black;
+    border-radius: 10px;
+}
+.box2{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
+
+}
+h2{
+    font-size: 2rem;
+
+}
+
+.box2 input{
+    border: solid 2px black;
+    border-radius: 5px;
+    height: 100%;
+}
+
+.box2 input[type=text]{
+    width: 75%;
+    font-size: 1.3rem;
+}
+.box2 input[type=submit]{
+    height: 100%;
+    width: 15%;
+    cursor: pointer;
+}
+.box3{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding: 5px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 1.5rem;
+    justify-content: space-between;
+}
+.box3 input[type=checkbox]{
+    height:18px;
+    width:18px;
+    accent-color: green;
+    margin-right: 10px;
+    cursor: pointer;
+   
+    /* appearance: none; */
+    /* border: 2px solid black; */
+
+}
+.no-task{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #444;
+    margin-top: 20px;
+    
+}
+.complete{
+    text-decoration: line-through;
+}
+button{
+    height: 25px;
+    width: 25px;
+    font-size: 1.2rem;
+    border: none;
+    background: none;
+    color: #ccc;
+    cursor: pointer;
+    
+}
+
+.rightbox{
+    height: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.delete-btn {
+  background-color: rgb(255, 1, 1);
+  color: black;
+  text-decoration: none;
+  padding-left: 0px;
+  box-sizing: border-box;
+  height: 40px;
+  width: 40px; /* initially just icon width */
+  display: flex;
+  justify-content: center; /* icon centered */
+  align-items: center;
+  transition: width 0.5s ease;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+   border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 1rem;
+  position: relative;
+}
+
+
+/* On hover: expand and shift content */
+.delete-btn:hover {
+  width: 100px;
+  justify-content: flex-start; /* align icon + text from left */
+  padding-left: 10px;
+ 
+}
+.icon{
+    flex-shrink: 0;
+    font-size: 2rem;
+    transition: margin 0.3s ease;
+}
+.delete-btn:hover .icon {
+  margin-right: 8px;
+}
+
+
+
+/* Hide text initially */
+.del-text {
+  /* margin-left: 10px; */
+  opacity: 0;
+  font-size: 0px;
+  transition: opacity 0.3s ease 0.2s; /* Slight delay for smoothness */
+}
+
+/* Show text on hover */
+.delete-btn:hover .del-text {
+  opacity: 1;
+  font-size: 1.3rem;
+} 
+
+.leftbox{
+    display: flex;
+    align-items: center;
+}

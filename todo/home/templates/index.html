@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO</title>
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">
+            <h2>TODOS</h2>
+
+            <form action="" method="post" enctype="multipart/form-data" class="form1">
+                {% csrf_token %}
+
+                <div class="box2">
+                    <input type="text" name="task" placeholder="add you next todo" autocomplete="off" required>
+
+                    <input type="submit" value="Add">
+                </div>
+
+            </form>
+
+            {% if tasks %}
+            {% for task in tasks %}
+            <form action="{% url 'complete' task.id %}" method="post" enctype="multipart/form-data" class="form1">
+                {% csrf_token %}
+
+
+                <div class="box3">
+                    <div class="leftbox">
+                        <a href=""></a>
+
+                        <label>
+                            <input type="checkbox" {% if task.complete %} checked {% endif %} name="complete"
+                                onchange="this.form.submit()">
+                            <button type="submit" name="important">
+                                {% if task.important %}
+                                ⭐
+                                {% else %}
+                                ✰
+                                {% endif %}
+
+
+                            </button>
+                            <span class="{% if task.complete %} complete {% endif %}">{{task.name}}</span>
+                        </label>
+                    </div>
+
+
+                    <div class="rightbox">
+                        <a href="{% url 'deltask' task.id %}" class="delete-btn">
+                            <span class="icon">🗑</span>
+                            <span class="del-text">Delete</span>
+                        </a>
+                    </div>
+
+
+
+
+
+                </div>
+
+
+            </form>
+            {% empty %}
+            no task available
+
+            {% endfor %}
+
+
+            {% else %}
+            <p class="no-task">No todos yet..</p>
+            {% endif %}
+
+
+
+
+
+        </div>
+
+
+
+
+
+    </div>
+
+</body>
+
+</html>
